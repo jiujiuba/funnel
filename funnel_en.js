@@ -51,7 +51,18 @@ fetch('https://www.cloudflare.com/cdn-cgi/trace').then(response=> response.text(
           }
         });
     }
-  var usFlagUnicode = '\uD83C\uDDFA\uD83C\uDDF8';
+  var FlagUnicode = '\uD83C\uDDEC\uD83C\uDDE7';
+  if(obj.loc === 'UK') {
+    FlagUnicode = '\uD83C\uDDEC\uD83C\uDDE7';
+  } else if(obj.loc === 'AU') {
+    FlagUnicode = '\uD83C\uDDE6\uD83C\uDDFA';
+  } else if(obj.loc === 'ZA') {
+    FlagUnicode = '\uD83C\uDDFF\uD83C\uDDE6';
+  } else if(obj.loc === 'US') {
+    FlagUnicode = '\uD83C\uDDFA\uD83C\uDDF8';
+  } else if(obj.loc === 'CA') {
+    FlagUnicode = '\uD83C\uDDFF\uD83C\uDDE6';
+  }
   var shippingDateDiv = document.querySelector('.shipping_date');
-  shippingDateDiv.innerHTML = '<div style="text-align:left;font-size:14px;">'+usFlagUnicode+' FREE SHIPPING: Order within <span style="color:#4CAF2B;font-weight:bold;">2h 35min</span> to get it by <span id="date" style="font-weight:bold">'+displayEnglishTime()+'</span></div>';
+  shippingDateDiv.innerHTML = '<div style="text-align:left;font-size:14px;">'+FlagUnicode+' FREE SHIPPING: Order within <span style="color:#4CAF2B;font-weight:bold;">2h 35min</span> to get it by <span id="date" style="font-weight:bold">'+displayEnglishTime()+'</span></div>';
 })
