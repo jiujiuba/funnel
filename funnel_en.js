@@ -11,9 +11,7 @@ function displayEnglishTime() {
   return englishTime;
   //document.getElementById("englishTime").innerText = englishTime;
 }
-var usFlagUnicode = '\uD83C\uDDFA\uD83C\uDDF8';
-var shippingDateDiv = document.querySelector('.shipping_date');
-shippingDateDiv.innerHTML = '<div style="text-align:left;font-size:14px;">'+usFlagUnicode+' FREE SHIPPING: Order within <span style="color:#4CAF2B;font-weight:bold;">2h 35min</span> to get it by <span id="date" style="font-weight:bold">'+displayEnglishTime()+'</span></div>';
+
 /*mulity country show or hidden*/
 const urlParams = new URLSearchParams(window.location.search);
 const acid = urlParams.get('acid');
@@ -53,4 +51,7 @@ fetch('https://www.cloudflare.com/cdn-cgi/trace').then(response=> response.text(
           }
         });
     }
+  var usFlagUnicode = '\uD83C\uDDFA\uD83C\uDDF8';
+  var shippingDateDiv = document.querySelector('.shipping_date');
+  shippingDateDiv.innerHTML = '<div style="text-align:left;font-size:14px;">'+usFlagUnicode+' FREE SHIPPING: Order within <span style="color:#4CAF2B;font-weight:bold;">2h 35min</span> to get it by <span id="date" style="font-weight:bold">'+displayEnglishTime()+'</span></div>';
 })
